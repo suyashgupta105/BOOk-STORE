@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/style.css">
+
+<div style="margin-left: 500;margin-top: 300">
+    <h1>Edit <%= imagecon.title %></h1>
+        <form method="post" action="/images/<%= imagecon._id %>?_mo=PUT" >
+                Title:<br>
+                <input type="text" name="blog[title]" value="<%= imagecon.title %>"><br>
+                Image:<br>
+                <input type="text" name="blog[image]" value="<%= imagecon.image %>"><br>
+                Description:<br>
+                <textarea name="blog[description]" ><%= imagecon.description %></textarea><br><br>
+                <input type="submit" value="Submit">
+              </form>
+</div>

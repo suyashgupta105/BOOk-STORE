@@ -1,0 +1,82 @@
+<%- include ("C:/node-example/views/partials/header") %>
+<link rel="stylesheet" href="/style.css">
+
+
+<style type=text/css> 
+.main::after{
+  content: "";
+  clear: both;
+  display: block;
+  
+
+}
+/*
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+  font-family: "Times New Roman", Times, serif;
+  display: block;
+}
+
+@media only screen and (max-width: 700px){
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .responsive {
+    width: 100%;
+  }
+}*/
+.f{
+  float: left;
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box;
+  /*width: 25.33%;
+  height: 25.33%;
+  padding: 25px 50px 75px 100px;*/
+}
+img{
+  border-radius: 20px;
+  
+  display: grid;
+}
+/* .main .btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+.main .btn:hover {
+  background-color: grey;
+}
+
+</style>
+ <div class="main" style="margin-left: 100px">
+   
+      <% imgs.forEach(function(k){ %>
+        <div class="f">
+          <a href="/images/<%= k._id %>"><li><strong><%= k.title %></strong></i>------<br> <br> <img src="<%= k.image%>" style="width:100%"><br><%= k.description %></li></a>
+        <!-- <button onclick= "/images/<%= k._id %>" class="btn">More info</button> -->
+        
+        
+ </div>
+          <%  }); %> 
+
+   
+</div><br><br><br>
+ <%- include ("C:/node-example/views/partials/footer") %>
+
+

@@ -1,0 +1,36 @@
+<%- include ("C:/node-example/views/partials/header") %>
+<head>
+    <style type=text/css>
+    p a
+    {
+               display: block;
+                color: darkblue;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<h1><%= single.title %></h1>
+<img src="<%= single.image %>">
+<h2><%= single.description %></h2>
+<% single.comment.forEach(function(comments){ %>
+<p>
+    <b><%= comments.name %></b> <%= comments.text %>
+</p>
+<% }); %> 
+
+
+<p>
+    <a href="/images/<%= single._id %>/edit">EDIT</a> 
+    <form action="/images/<%= single._id %>?_mo=DELETE" method="post">
+        <input type="submit" value="DELETE" style="margin-left:570px ;">
+    </form>
+     
+</p>
+<p>
+    <a href="/images" class="btn btn-primary" > Back to book store</a>
+    </p>
+    <br><br><br>
+
+<%- include ("C:/node-example/views/partials/footer") %>

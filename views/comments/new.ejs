@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/style.css">
+<div style="margin-left: 500;margin-top: 300">
+        <form method="post" action="/images/<%= data._id %>/comments" >
+                Comment:<br>
+                <input type="text" name="comment[text]" value="text"><br>
+                Name:<br>
+                <input type="text" name="comment[name]" value="name"><br>
+                
+                <input type="submit" value="Submit">
+              </form>
+</div>

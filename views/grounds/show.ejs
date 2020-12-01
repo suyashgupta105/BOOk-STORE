@@ -1,0 +1,108 @@
+<%- include ("C:/node-example/views/partials/header") %>
+<head>
+    <style >
+    p a
+    {
+                margin-left: 550px;
+                display: block;
+                color:darkblue;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                display: inline-block;
+                
+    }
+    p a:hover {
+  background-color:#ddd;
+  color: black;
+  border-radius: 12px;
+}
+    
+    .button2{
+        border-radius: 12px;
+        float: left;
+        margin-left:500px;
+        background-color:rgba(87, 87, 245, 0.979) ;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        float: left;
+        font:message-box;
+        
+        font-size: 16px;
+    }
+    .button3{
+        border-radius: 12px;
+        margin-left:30px;
+        background-color: red ;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        
+        font:message-box;
+        
+        font-size: 16px;
+    }
+    .button1{
+        border-radius: 12px;
+        margin-left:550px;
+        background-color: rgb(14, 243, 26) ;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font:message-box;
+        
+        font-size: 16px;
+    }
+    .f{
+    
+    padding: 25px;
+    box-sizing: border-box;
+    column-count: 3;
+    
+    }
+    img{
+        border-radius: 8px;
+    }
+    </style>
+</head>
+<h1 style="font-family: Lucida Console; text-align: center; font-variant: small-caps; text-decoration: underline;" ><%= single.title %> </h1>
+<div class="f">
+<img src="<%= single.image %>"width="300" height="400"  >
+
+<h2><%= single.description %></h2>
+</div>
+<% single.comment.forEach(function(comments){ %>
+<p>
+    <b><%= comments.name %></b> <%= comments.text %>
+</p>
+<% }); %> 
+
+
+
+<p>   
+    <a href="/images/<%= single._id %>/edit" class="button2">EDIT</a>
+</p>
+<p>
+<form action="/images/<%= single._id %>?_mo=DELETE" method="post">
+    <input type="submit" class="button3" value="DELETE" >
+</form>
+</p>
+   
+<br>
+<p>
+    <a href="/images" class="btn btn-primary" > Back to book store</a>
+</p>
+<p>
+    <a href="/images/<%= single._id %>/comments/new" class="button1">COMMENT</a>
+</p>
+<br><br><br>
+
+<%- include ("C:/node-example/views/partials/footer") %>
